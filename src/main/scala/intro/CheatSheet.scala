@@ -99,7 +99,7 @@ object AnObjectWithMain {
   returns the type 'Unit'. We may choose to specify this explicitly, however,
   in the absence of a = sign, this is inferred.
   */
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     println("hi")
   }
 }
@@ -185,7 +185,7 @@ This class defines a method that is parameterised with the name 'X'. This
 type-parameter has scope within the method body.
 */
 class AClassWithATypeParameterAndParameterisedMethod[T] {
-  def method[X] {}
+  def method[X]: Unit = {}
 }
 
 //// higher-kinded type-parameter
@@ -207,7 +207,7 @@ So we might say that "F is a unary type constructor" because it is a
 parameterised value that accepts one more type-parameter.
 */
 class AClassWithHigherKind[F[_]] {
-  def method[G[_, _]] {}
+  def method[G[_, _]]: Unit = {}
 }
 
 //// method declaration
